@@ -74,7 +74,8 @@ int main() {
     signalToBinary(input, len, binary);
 
     char* hexadecimal = binaryToHex(binary);
-    printf("%s\n", hexadecimal);
+    /*printf("%d\n", binary);
+    printf("%s\n", hexadecimal);*/
 
     free(input);
     free(hexadecimal);
