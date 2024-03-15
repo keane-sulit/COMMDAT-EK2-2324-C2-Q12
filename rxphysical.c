@@ -78,7 +78,7 @@ int main() {
     //printf("Binary representation: %s\n", binary);
 
     char* hexadecimal = binaryToHex(binary);
-    printf("Hexadecimal representation: %s\n", hexadecimal);
+    printf("%s\n", hexadecimal);
 
     free(input);
     free(hexadecimal);
