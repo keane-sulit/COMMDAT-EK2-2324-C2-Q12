@@ -7,6 +7,7 @@
 // Function to convert integer signal to binary
 void signalToBinary(int* input, int len, char* binary) {
     int binaryIndex = 0;
+    int lastVoltage = 0;
     int i;
 
     for (i = 0; i < len; i++) {
@@ -14,6 +15,7 @@ void signalToBinary(int* input, int len, char* binary) {
             binary[binaryIndex++] = '1';
         } else if (input[i] == -5) {
             binary[binaryIndex++] = '1';
+            lastVoltage = -5;
         } else {
             binary[binaryIndex++] = '0';
         }
@@ -73,9 +75,10 @@ int main() {
     char binary[MAX_BITS];
     signalToBinary(input, len, binary);
 
+    //printf("Binary representation: %s\n", binary);
+
     char* hexadecimal = binaryToHex(binary);
-    /*printf("%d\n", binary);
-    printf("%s\n", hexadecimal);*/
+    printf("Hexadecimal representation: %s\n", hexadecimal);
 
     free(input);
     free(hexadecimal);

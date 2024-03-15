@@ -67,7 +67,9 @@ void hex_to_bin(char hex_digit[], char binary_string[], int count) {
                 return;
         }
         i++;
+        count = i * 4;
     }
+   //printf("Number of set bits in the hex is: %d\n", count); 
 }
 
 
@@ -97,6 +99,7 @@ int main() {
     char hex_digit[1024];  // Buffer to hold the user input, adjust size as needed
 	char binary_string[1024];
 	int count;
+    //printf("Enter a binary string: "); // Prompt for user input (TODO: Remove later)
     scanf("%s", hex_digit);  // Read the hex string from datalink layer
     int i;
 
@@ -104,15 +107,18 @@ int main() {
 	
 	int length = strlen(binary_string);
     int *encodedSignal = (int *)malloc(length * sizeof(int));
- 
+
     if (encodedSignal == NULL) {
         printf("Memory allocation failed\n");
         return 1;  // Return with error code
     }
-    /*txphysical(binary_string, encodedSignal, length);
+    txphysical(binary_string, encodedSignal, length);
+
+        //printf("%s", binary_string);
+
     printf("\n");
-    printf("%s", binary_string);
-    printf("\n");*/
+    printf("\n");
+    //printf("Encoded Signal: "); // Print the encoded signal (TODO: Remove later)
     for (i = 0; i < length; i++) {
         printf("%d ", encodedSignal[i]);
     }
