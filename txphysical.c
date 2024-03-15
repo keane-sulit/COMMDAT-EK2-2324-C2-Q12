@@ -109,10 +109,10 @@ int main() {
         printf("Memory allocation failed\n");
         return 1;  // Return with error code
     }
-    txphysical(binary_string, encodedSignal, length);
+    /*txphysical(binary_string, encodedSignal, length);
     printf("\n");
     printf("%s", binary_string);
-    printf("\n");
+    printf("\n");*/
     for (i = 0; i < length; i++) {
         printf("%d ", encodedSignal[i]);
     }
